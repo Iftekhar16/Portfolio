@@ -1,0 +1,332 @@
+---
+const { pageTitle } = Astro.props;
+import "../css/style.css";
+import Header from "../components/Header.astro";
+import HeaderPhone from "../components/HeaderPhone.astro";
+import PhoneNav from "../components/PhoneNav.astro";
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- favicon -->
+    <link href="favicon-light.png" rel="icon" media="(prefers-color-scheme: light)"/>
+    <link href="favicon-dark.png" rel="icon" media="(prefers-color-scheme: dark)"/>
+    <!-- iconify -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <!-- poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- <title>Iftekhar | Portfolio</title> -->
+    <title>{pageTitle}</title>
+</head>
+<body class="font-[poppins] bg-dark1 text-light1 h-[100svh] w-[100svw] overflow-hidden p-3">
+    <div class="body-container flex-grow h-full">
+        <div class="body-wrapper flex gap-3 h-full">
+            
+            
+            <!-- ------------------------------------------------------------------------------------ -->
+			<!-- header-phone -->
+
+			<div class="nav-left-phone flex md:hidden z-30 flex-grow-0 flex-col justify-center h-[100svh] bg-dark1 rounded-lg w-[100svw]">
+				<div class="nav-phone-top-container z-40 p-5 flex justify-between items-center gap-3 absolute top-0 w-full">
+					<div class="flex gap-3 items-center">
+						<a href="/"><img class="w-12 h-12 rounded-full" src="logo.png" alt=""></a>
+						<a href="/"><div class="title title-lg font-semibold">Portfolio</div></a>
+					</div>
+					<button class="close-nav text-5xl relative -top-2"><iconify-icon icon="material-symbols:left-panel-close" class="text-xl"></iconify-icon></button>
+				</div>
+				<div class="nav-bottom-container p-5 w-full absolute bottom-0 left-0">
+					<div class="links-phone flex flex-col gap-3 mb-5">
+                        <div class="flex gap-3">
+                            <div class="w-full"></div>
+							<a href="/" class="nav-item flex flex-col gap-3 justify-center items-center w-full aspect-square rounded-lg text-light2 hover:text-light1 bg-dark2 hover:bg-dark1 transition">
+								<iconify-icon icon="fa:home" class="text-3xl"></iconify-icon>Home
+							</a>
+							<a href="/projects" class="nav-item flex flex-col gap-3 justify-center items-center w-full aspect-square rounded-lg text-light2 hover:text-light1 bg-dark2 hover:bg-dark1 transition">
+								<iconify-icon icon="fa-solid:tools" class="text-3xl"></iconify-icon>Projects
+							</a>
+						</div>
+					</div>
+					<div class="flex items-center gap-3">
+						<img class="w-12 h-12 rounded-full" src="pp3.jpg" alt="">
+						<div class="name-email-container flex flex-col gap-1">
+							<div class="name text-sm font-semibold">Md. Iftekhar Hossain</div>
+							<a class=" text-xs text-light2 hover:text-light1 transition" href="mailto:iftekharhossain16@gmail.com">iftekharhossain16@gmail.com</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<style>
+				.nav-left-phone{
+					position: absolute;
+					top: 0;
+					left: -100%;
+					transition: left 0.5s cubic-bezier(0,0,0,.96);
+				}
+			</style>
+			
+			<script>
+				var navPhone = document.querySelector(".nav-left-phone");
+				var showNav = document.querySelector(".show-nav");
+				var closeNav = document.querySelector(".close-nav");
+				showNav.addEventListener("click", ()=>{
+					navPhone.style.left = "0";
+				})
+				closeNav.addEventListener("click", ()=>{
+					navPhone.style.left = "-100%";
+				})
+			</script>
+
+
+            <!-- ------------------------------------------------------------------------------------ -->
+			<!-- header-phone -->
+
+			<div class="nav-left flex-grow-0 hidden md:flex flex-col justify-between bg-dark1 rounded-lg w-[250px]">
+				<div class="nav-top-container p-3">
+					<div class="flex gap-5 items-center">
+						<a href="/"><img class="w-10 h-10 rounded-full" src="logo.png" alt=""></a>
+						<a href="/"><div class="title title-lg font-semibold">Portfolio</div></a>
+					</div>
+				</div>
+				<div class="nav-middle-container flex flex-col gap-3">
+					<a href="/" class="nav-item flex items-center px-5 py-3 rounded-lg text-light2 hover:text-light1 bg-dark1 hover:bg-dark2 transition"><iconify-icon icon="fa:home" class="text-xl mr-5"></iconify-icon>Home</a>
+					<a href="/projects" class="nav-item flex items-center px-5 py-3 rounded-lg bg-dark2"><iconify-icon icon="fa-solid:tools" class="text-xl mr-5"></iconify-icon>Projects</a>
+				</div>
+				<div class="nav-bottom-container flex items-center gap-3">
+					<img class="w-12 h-12 rounded-full" src="pp3.jpg" alt="">
+					<div class="name-email-container flex flex-col gap-1">
+						<div class="name text-sm font-semibold">Md. Iftekhar Hossain</div>
+						<a class="text-xs text-light2 hover:text-light1 transition" href="mailto:iftekharhossain16@gmail.com">iftekharhossain16@gmail.com</a>
+					</div>
+				</div>
+			</div>
+
+
+            
+            <div class="content-right flex-grow h-full bg-dark2 rounded-lg px-5 pb-3 overflow-scroll">
+
+                <PhoneNav/>
+                <style>
+                    .wrapper{
+                        line-height: 1.7;
+                    }
+                </style>
+                <div class="wrapper max-w-[800px] mx-auto pt-10">
+                    <div class="projects-container flex flex-col gap-32">
+                        <div class="project-container">
+                            <div class="title text-sm text-light2 mb-1">Professional Projects</div>
+                            <div class="title text-5xl font-bold mb-5">CDMB</div>
+                            <div class="flex flex-col gap-7">
+                                <img class="rounded-lg" src="cdmb1.png" alt="">
+                                <div class="text">
+                                    <div class="text-sm text-light2 mb-1">Summary</div>
+                                    A website, built for a Madrasa in Mymensingh.
+                                    The project was created using the Madrasa Site Template that me and my team developed.
+                                </div>
+                                <div class="text">
+                                    <div class="text-sm text-light2 mb-1">My Role</div>
+                                    <div class="">• Building the entire front-end (without using any libraries)</div>
+                                    <div class="">• Designing the UI/UX</div>
+                                    <div class="">• Client management (partial)</div>
+                                </div>
+                                <div class="text">
+                                    <div class="text-sm text-light2 mb-1">Features</div>
+                                    <div class="">• Image & video gallery</div>
+                                    <div class="">• Notice management</div>
+                                    <div class="">• News & event management (blog)</div>
+                                    <div class="">• Quote management</div>
+                                    <div class="">• Contact</div>
+                                    <div class="">• Class Schedule Management</div>
+                                    <div class="">• Student, teacher and staff management</div>
+                                </div>
+                                <div class="text">
+                                    <div class="text-sm text-light2 mb-1">Challenges</div>
+                                    <div class="">• The team's time management</div>
+                                    <div class="">• Figuring out hosting for the first time</div>
+                                    <div class="">• Client management, mostly the pricing of domains and hosting</div>
+                                </div>
+                                <div class="text">
+                                    <div class="text-sm text-light2 mb-1">Learnings</div>
+                                    <div class="">• A component based infrustructure can save a lot of debugging time</div>
+                                    <div class="">• Clients often don't know what they need, nor what they want</div>
+                                    <div class="">• Working with a team can be challenging, but also really rewarding</div>
+                                    <div class="">• You can not undermine the importance of a work pipeline</div>
+                                </div>
+                                <div class="text">
+                                    <div class="text-sm text-light2 mb-2">Technical Details</div>
+                                    <div class="techs-container flex gap-3 flex-wrap">
+                                        <!-- <div class="tech-container px-3 py-2 border-[1px] border-light2 rounded-lg flex items-center">
+                                            <iconify-icon class="text-xl mr-1" icon="bxl:django"></iconify-icon>
+                                            <div class="tech-name">Django</div>
+                                        </div> -->
+                                        <div class="tech-container border-[1px] border-light2 rounded-lg flex items-center overflow-hidden">
+                                            <iconify-icon class="text-3xl mr-1 bg-light1 text-dark2 px-3 py-2 h-full flex items-center" icon="bxl:django"></iconify-icon>
+                                            <div class="tech-name text-sm px-3 py-2">Django</div>
+                                        </div>
+                                        <div class="tech-container border-[1px] border-light2 rounded-lg flex items-center overflow-hidden">
+                                            <iconify-icon class="text-3xl mr-1 bg-light1 text-dark2 px-3 py-2 h-full flex items-center" icon="akar-icons:javascript-fill"></iconify-icon>
+                                            <div class="tech-name text-sm px-3 py-2">JavaScript</div>
+                                        </div>
+                                        <div class="tech-container border-[1px] border-light2 rounded-lg flex items-center overflow-hidden">
+                                            <iconify-icon class="text-3xl mr-1 bg-light1 text-dark2 px-3 py-2 h-full flex items-center" icon="mdi:tailwind"></iconify-icon>
+                                            <div class="tech-name text-sm px-3 py-2">Tailwind</div>
+                                        </div>
+                                        <div class="tech-container border-[1px] border-light2 rounded-lg flex items-center overflow-hidden">
+                                            <iconify-icon class="text-3xl mr-1 bg-light1 text-dark2 px-3 py-2 h-full flex items-center" icon="fontisto:mysql"></iconify-icon>
+                                            <div class="tech-name text-sm px-3 py-2">MySQL</div>
+                                        </div>
+                                        <div class="tech-container border-[1px] border-light2 rounded-lg flex items-center overflow-hidden">
+                                            <iconify-icon class="text-3xl mr-1 bg-light1 text-dark2 px-3 py-2 h-full flex items-center" icon="solar:figma-bold"></iconify-icon>
+                                            <div class="tech-name text-sm px-3 py-2">Figma</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text">
+                                    <div class="text-sm text-light2 mb-1">Results & Value Added</div>
+                                    <div class="">• They get an online presence and increased traffic</div>
+                                    <div class="">• They now have an online notice board for teachers and students</div>
+                                    <div class="">• They have a portal to keep all of the displayed information up to date</div>
+                                    <div class="">• People now have an official place to contact them</div>
+                                    <div class="">• A framework for future online applications</div>
+                                </div>
+                                <div class="text">
+                                    <div class="text-sm text-light2 mb-1">Links</div>
+                                    <div class="">Source code is not shared as this project has been handed over to the client.</div>
+                                </div>
+                            </div>                    
+                        </div>
+                        
+        
+                        <!-- --------------------------------------------------------------------------------------------------------- -->
+                        
+                        
+                        
+                        <div class="project-container">
+                            <div class="title text-sm text-light2 mb-1">Personal Projects</div>
+                            <div class="title text-5xl font-bold mb-5">Online Fitness Store</div>
+                            <div class="flex flex-col gap-7">
+                                <img class="rounded-lg" src="fitness.png" alt="">
+                                <div class="text">
+                                    <div class="text-sm text-light2 mb-1">Summary</div>
+                                    A front-end template for an online fitness store.
+                                </div>
+                                <div class="text">
+                                    <div class="text-sm text-light2 mb-1">My Role</div>
+                                    <div class="">• Prototyping in figma</div>
+                                    <div class="">• Built the front-end from scratch</div>
+                                    <div class="">• Backend Django implementation</div>
+                                </div>
+                                <div class="text">
+                                    <div class="text-sm text-light2 mb-1">Challenges</div>
+                                    <div class="">• Team management</div>
+                                </div>
+                                <div class="text">
+                                    <div class="text-sm text-light2 mb-1">Learnings</div>
+                                    <div class="">• Introduction to Django</div>
+                                    <div class="">• First collaborative web dev project</div>
+                                    <div class="">• The importance of keeping a friendly relationsip with the team members</div>
+                                    <div class="">• Always prototype, even if you've started coding and a new feature needs to be added in</div>
+                                    <div class="">• The importance of an activity flowchart/planning</div>
+                                </div>
+                                <div class="text">
+                                    <div class="text-sm text-light2 mb-2">Technical Details</div>
+                                    <div class="techs-container flex gap-3 flex-wrap">
+                                        <div class="tech-container border-[1px] border-light2 rounded-lg flex items-center overflow-hidden">
+                                            <iconify-icon class="text-3xl mr-1 bg-light1 text-dark2 px-3 py-2 h-full flex items-center" icon="bxl:django"></iconify-icon>
+                                            <div class="tech-name text-sm px-3 py-2">Django</div>
+                                        </div>
+                                        <div class="tech-container border-[1px] border-light2 rounded-lg flex items-center overflow-hidden">
+                                            <iconify-icon class="text-3xl mr-1 bg-light1 text-dark2 px-3 py-2 h-full flex items-center" icon="akar-icons:javascript-fill"></iconify-icon>
+                                            <div class="tech-name text-sm px-3 py-2">JavaScript</div>
+                                        </div>
+                                        <div class="tech-container border-[1px] border-light2 rounded-lg flex items-center overflow-hidden">
+                                            <iconify-icon class="text-3xl mr-1 bg-light1 text-dark2 px-3 py-2 h-full flex items-center" icon="mdi:tailwind"></iconify-icon>
+                                            <div class="tech-name text-sm px-3 py-2">Tailwind</div>
+                                        </div>
+                                        <div class="tech-container border-[1px] border-light2 rounded-lg flex items-center overflow-hidden">
+                                            <iconify-icon class="text-3xl mr-1 bg-light1 text-dark2 px-3 py-2 h-full flex items-center" icon="fontisto:mysql"></iconify-icon>
+                                            <div class="tech-name text-sm px-3 py-2">MySQL</div>
+                                        </div>
+                                        <div class="tech-container border-[1px] border-light2 rounded-lg flex items-center overflow-hidden">
+                                            <iconify-icon class="text-3xl mr-1 bg-light1 text-dark2 px-3 py-2 h-full flex items-center" icon="solar:figma-bold"></iconify-icon>
+                                            <div class="tech-name text-sm px-3 py-2">Figma</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text">
+                                    <div class="text-sm text-light2 mb-1">Links</div>
+                                    <div class="">• Github: <a class="underline" href="github.com/Iftekhar16/OnlineFitnessStore">github.com/Iftekhar16/OnlineFitnessStore</a></div>
+                                </div>
+                            </div>                        
+                        </div>
+                        
+                        
+                        
+                        <!-- --------------------------------------------------------------------------------------------------------- -->
+                        
+                        
+                        
+                        <div class="project-container">
+                            <div class="title text-sm text-light2 mb-1">Personal Projects</div>
+                            <div class="title text-5xl font-bold mb-5">Dark Triad Detection Using Machine Learning</div>
+                            <div class="flex flex-col gap-7">
+                                <div class="text">
+                                    <div class="text-sm text-light2 mb-1">Summary</div>
+                                    A machine learning project implemented in python that can detect whether a person has Machiavellian, Narcissistic, or Psychopathic traits in their personality through some questionnaires.
+                                    This was a team project for my Statistics for Data Science course.
+                                </div>
+                                <div class="text">
+                                    <div class="text-sm text-light2 mb-1">Dataset</div>
+                                    This data was collected with an interactive version of the Short Dark Triad (see Paulhus, D. L., & Jones, D. N. (2011, January). 
+                                    Introducing a short measure of the Dark Triad. 
+                                    Poster presented at the meeting of the Society for Personality and Social Psychology, San Antonio).
+                                </div>
+                                <div class="text">
+                                    <div class="text-sm text-light2 mb-1">My Role</div>
+                                    <div class="">• Implementing Decision Tree, Random Forest, SVM</div>
+                                    <div class="">• Data Cleaning</div>
+                                    <div class="">• Data Normalization</div>
+                                    <div class="">• Some Visualization</div>
+                                </div>
+                                <div class="text">
+                                    <div class="text-sm text-light2 mb-1">Learnings</div>
+                                    <div class="">• Introduction to Machine Learning</div>
+                                    <div class="">• Learning and implementing ML algorithms, data manipulation techniques</div>
+                                </div>
+                                <div class="text">
+                                    <div class="text-sm text-light2 mb-2">Technical Details</div>
+                                    <div class="techs-container flex gap-3">
+                                        <div class="tech-container border-[1px] border-light2 rounded-lg flex items-center overflow-hidden">
+                                            <iconify-icon class="text-3xl mr-1 bg-light1 text-dark2 px-3 py-2 h-full flex items-center" icon="akar-icons:python-fill"></iconify-icon>
+                                            <div class="tech-name text-sm px-3 py-2">Python</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text">
+                                    <div class="text-sm text-light2 mb-1">Links</div>
+                                    <div class="">• Github: <a class="underline" href="github.com/Iftekhar16/Dark-Triad-Detection">github.com/Iftekhar16/Dark-Triad-Detection</a></div>
+                                </div>
+                            </div>                        
+                        </div>
+        
+                        <div class="text leading-normal text-sm mb-10">More projects can be found on <a class="underline mb-3" href="github.com/Iftekhar16?tab=repositories">here</a></div>
+        
+                    </div>
+                    
+        
+                    
+                    
+                    
+                    
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+</body>
+</html>
