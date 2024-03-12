@@ -1,6 +1,7 @@
 ---
 import "../css/style.css";
 import PhoneNav from "../components/PhoneNav.astro";
+import Loader from "../components/Loader.astro";
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +20,8 @@ import PhoneNav from "../components/PhoneNav.astro";
     <title>Iftekhar • Portfolio</title>
 </head>
 <body class="font-[poppins] bg-dark1 text-light1">
-    <div class="body-container flex-grow  h-[100svh] w-[100svw] overflow-hidden p-3">
+    <div class="body-container flex-grow  h-[100svh] w-[100svw] overflow-hidden p-3 relative">
+		<Loader/>
         <div class="body-wrapper flex gap-3 h-full">
             
 			
@@ -108,6 +110,7 @@ import PhoneNav from "../components/PhoneNav.astro";
             <div class="content-right flex-grow h-full bg-dark2 rounded-lg px-5 pb-3 overflow-scroll">
 				
 				<PhoneNav/>
+				
 
 
 				

@@ -1,0 +1,24 @@
+<div class="loader-container bg-dark2 absolute top-0 left-0 w-[100svw] h-[100svh] z-[999] transition">
+    <div class="loader-wrapper h-full flex justify-center items-center">
+        <div class="loader-text text-7xl text-center font-bold">
+            Hello!
+            <div class="text-xs text-center font-normal text-light2">Please wait, will load shortly</div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // window.onload = function(){
+    //     document.querySelector(".loader-container").classList.add("slide");
+    // }
+    setTimeout(function() {
+        document.querySelector(".loader-container").classList.add("slide");
+    }, 500);
+</script>
+
+<style>
+    .slide {
+        transition: transform 0.3s ease-in-out;
+        transform: translateX(100%);
+    }
+</style>
