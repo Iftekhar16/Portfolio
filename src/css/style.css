@@ -28,6 +28,11 @@
     background: rgba(156, 163, 175, 0.822);
 }
 
+::selection {
+    color: #e1e2ea;
+    background: #000000;
+}
+
 
 /* .nav-tab-active{
     display: flex;
